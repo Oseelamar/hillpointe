@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hillpointe.pages.dev/sitemap.xml

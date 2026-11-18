@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" fill="none" stroke="#B4C8DC" stroke-width="1.4" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" letter-spacing="1">
+  <defs>
+    <pattern id="g" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" stroke-width=".4" opacity=".45"/></pattern>
+    <pattern id="G" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M100 0H0V100" stroke-width=".7" opacity=".6"/></pattern>
+    <marker id="t" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 9L9 1" stroke-width="1.4"/></marker>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#g)" stroke="none"/>
+  <rect width="1600" height="1000" fill="url(#G)" stroke="none"/>
+
+  <!-- survey crosses -->
+  <g stroke-width="1.1">
+    <path d="M195 200h10M200 195v10M395 200h10M400 195v10M1195 200h10M1200 195v10M1395 800h10M1400 795v10M195 800h10M200 795v10M795 900h10M800 895v10"/>
+  </g>
+
+  <!-- ELEVATION: typical three-storey apartment building -->
+  <g stroke-width="1.3">
+    <path d="M520 760H1500"/>                         <!-- grade -->
+    <path d="M600 760V380H1400V760"/>                 <!-- body -->
+    <path d="M590 380H1410M590 372H1410"/>            <!-- parapet -->
+    <path d="M600 640H1400M600 520H1400" stroke-width=".8"/>
+    <path d="M960 380V330H1040V380M952 330H1048"/>    <!-- stair tower -->
+    <path d="M975 760V690H1025V760M1000 690V760" stroke-width="1"/> <!-- entry -->
+  </g>
+  <g stroke-width=".9">
+    <!-- windows, three floors -->
+    <path id="w" d="M622 418h36v62h-36zM640 418v62"/>
+    <use href="#w" x="80"/><use href="#w" x="160"/><use href="#w" x="240"/><use href="#w" x="320"/>
+    <use href="#w" x="440"/><use href="#w" x="520"/><use href="#w" x="600"/><use href="#w" x="680"/>
+    <use href="#w" y="120"/><use href="#w" x="80" y="120"/><use href="#w" x="160" y="120"/><use href="#w" x="240" y="120"/><use href="#w" x="320" y="120"/>
+    <use href="#w" x="440" y="120"/><use href="#w" x="520" y="120"/><use href="#w" x="600" y="120"/><use href="#w" x="680" y="120"/>
+    <use href="#w" y="240"/><use href="#w" x="80" y="240"/><use href="#w" x="160" y="240"/><use href="#w" x="240" y="240"/>
+    <use href="#w" x="520" y="240"/><use href="#w" x="600" y="240"/><use href="#w" x="680" y="240"/>
+    <!-- balcony rails -->
+    <path d="M700 500h120M700 486h120M700 486v14M740 486v14M780 486v14M820 486v14M1100 620h120M1100 606h120M1100 606v14M1140 606v14M1180 606v14M1220 606v14"/>
+  </g>
+
+  <!-- dimension: overall width -->
+  <g stroke-width=".9">
+    <path d="M600 300V340M1400 300V340" opacity=".8"/>
+    <path d="M600 310H1400" marker-start="url(#t)" marker-end="url(#t)"/>
+  </g>
+  <text x="1000" y="300" text-anchor="middle" stroke="none" fill="#B4C8DC">212'-0"</text>
+  <!-- dimension: floor levels -->
+  <g stroke-width=".9">
+    <path d="M540 760V380" marker-start="url(#t)" marker-end="url(#t)"/>
+    <path d="M532 640H548M532 520H548"/>
+  </g>
+  <g stroke="none" fill="#B4C8DC" text-anchor="end">
+    <text x="526" y="764">EL. 0'-0"</text>
+    <text x="526" y="644">+10'-8"</text>
+    <text x="526" y="524">+21'-4"</text>
+    <text x="526" y="384">+33'-6"</text>
+  </g>
+  <!-- section callout -->
+  <g stroke-width="1"><circle cx="1460" cy="520" r="18"/><path d="M1442 520H1478M1400 520H1442" stroke-dasharray="4 4"/></g>
+  <g stroke="none" fill="#B4C8DC" text-anchor="middle"><text x="1460" y="514" font-size="9">A</text><text x="1460" y="532" font-size="9">3</text></g>
+
+  <!-- SITE PLAN -->
+  <g stroke-width="1">
+    <path d="M90 560L470 590L455 930L70 900Z" stroke-dasharray="10 5 2 5"/>
+    <path d="M130 610h110v44H130zM270 618h120v44H270zM140 700h100v44H140zM280 712h110v44H280zM150 800h90v44H150z" stroke-width="1.1"/>
+    <path d="M120 680H430M260 600V880" stroke-width=".6" stroke-dasharray="3 4"/>
+    <circle cx="360" cy="840" r="28" stroke-width=".8"/>
+  </g>
+  <!-- north arrow -->
+  <g stroke-width="1"><circle cx="110" cy="140" r="26"/><path d="M110 104V176M110 104l-8 18h16z"/></g>
+  <text x="110" y="96" text-anchor="middle" stroke="none" fill="#B4C8DC">N</text>
+
+  <!-- title block -->
+  <g stroke-width=".8"><path d="M1180 880H1560V960H1180ZM1180 910H1560M1400 880V960"/></g>
+  <g stroke="none" fill="#B4C8DC">
+    <text x="1192" y="900">TYPICAL ELEVATION · 3 STOREY</text>
+    <text x="1192" y="940">HILLPOINTE · DESIGN + BUILD</text>
+    <text x="1414" y="900">SHEET</text>
+    <text x="1414" y="940" font-size="16">A-201</text>
+  </g>
+</svg>

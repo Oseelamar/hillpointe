@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Attainable multifamily developer and builder | Hillpointe</title>
+<meta name="robots" content="noindex">
+<script>
+/* Runs before paint. Review switches: ?p=0..1 freezes the hero zoom; ?flat turns motion off. */
+(function () {
+  var d = document.documentElement;
+  d.classList.add('js');
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || /[?&]flat/.test(location.search)) d.classList.add('calm');
+})();
+</script>
+<link rel="preload" as="image" href="media/hero-poster.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body id="top">
+
+<!-- HEADER (Castle pattern: utility strip + ruled bar, solid once scrolled) -->
+<header class="hdr" id="hdr">
+  <nav class="util" aria-label="Utility">
+    <a href="https://hillpointe.com/communities">Find a Home</a>
+    <a href="https://hillpointe.com/sell-land">Sell Land</a>
+    <a href="https://hillpointe.com/hillpointe-helps">Hillpointe Helps</a>
+    <a href="https://hillpointe.com/faq">FAQ</a>
+  </nav>
+  <div class="bar">
+    <a class="bar__logo" href="#top" aria-label="Hillpointe home">
+      <img src="media/logo.png" alt="Hillpointe" width="600" height="68">
+    </a>
+    <nav class="nav" aria-label="Main">
+      <ul class="nav__list">
+        <li class="has-sub">
+          <a href="https://hillpointe.com/about">About</a>
+          <button class="nav__tog" type="button" aria-expanded="false" aria-label="About menu"></button>
+          <ul class="sub">
+            <li><a href="https://hillpointe.com/about">About Us</a></li>
+            <li><a href="https://hillpointe.com/team">Team</a></li>
+            <li><a href="https://hillpointe.com/approach">Our Approach</a></li>
+            <li><a href="https://hillpointe.com/hillpointe-helps">Hillpointe Helps</a></li>
+            <li><a href="https://hillpointe.com/affiliates">Affiliates</a></li>
+          </ul>
+        </li>
+        <li class="has-sub">
+          <a href="https://hillpointe.com/communities">Portfolio</a>
+          <button class="nav__tog" type="button" aria-expanded="false" aria-label="Portfolio menu"></button>
+          <ul class="sub">
+            <li><a href="https://hillpointe.com/communities">All Communities</a></li>
+            <li><a href="https://hillpointe.com/communities?state=Florida">Florida</a></li>
+            <li><a href="https://hillpointe.com/communities?state=Georgia">Georgia</a></li>
+            <li><a href="https://hillpointe.com/communities?state=South%20Carolina">South Carolina</a></li>
+            <li><a href="https://hillpointe.com/communities?state=North%20Carolina">North Carolina</a></li>
+            <li><a href="https://hillpointe.com/communities?state=Tennessee">Tennessee</a></li>
+            <li><a href="https://hillpointe.com/communities?state=Colorado">Colorado</a></li>
+            <li><a href="https://hillpointe.com/communities?state=Arizona">Arizona</a></li>
+            <li><a href="https://hillpointe.com/communities?state=Kentucky">Kentucky</a></li>
+            <li><a href="https://hillpointe.com/communities?state=Nevada">Nevada</a></li>
+          </ul>
+        </li>
+        <li><a href="https://hillpointe.com/news">News</a></li>
+        <li><a href="https://hillpointe.com/careers">Careers</a></li>
+        <li><a href="https://hillpointe.com/contact">Contact Us</a></li>
+      </ul>
+    </nav>
+    <a class="bar__cta" href="https://app.junipersquare.com/i/hillpointe" target="_blank" rel="noopener">Investor Login <span aria-hidden="true">↗</span></a>
+    <button class="burger" type="button" aria-label="Menu" aria-haspopup="dialog" id="burger"><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<dialog class="mm" id="mm" aria-label="Menu">
+  <div class="mm__top">
+    <a class="bar__logo" href="#top"><img src="media/logo.png" alt="Hillpointe" width="600" height="68"></a>
+    <button class="mm__close" type="button" aria-label="Close menu" id="mm-close"><span></span><span></span></button>
+  </div>
+  <div class="mm__body" id="mm-body"></div>
+  <a class="bar__cta mm__cta" href="https://app.junipersquare.com/i/hillpointe" target="_blank" rel="noopener">Investor Login <span aria-hidden="true">↗</span></a>
+</dialog>
+
+<main>
+  <!-- HERO: the logo mark holds the video; scrolling zooms through it until the video fills the screen -->
+  <section class="hero" id="hero" aria-label="Introduction">
+    <div class="hero__stage">
+      <div class="hero__media" id="hero-media">
+        <video class="hero__video" id="hero-video" muted loop playsinline autoplay preload="auto" poster="media/hero-poster.jpg" aria-hidden="true">
+          <source src="media/hero.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <!-- shade behind the copy only; JS fades it in as the video spreads under the text -->
+      <div class="hero__scrim" id="hero-scrim" aria-hidden="true"></div>
+
+      <!-- invisible box that sets where and how big the mark starts; JS reads it -->
+      <div class="hero__slot" id="hero-slot" aria-hidden="true"></div>
+
+      <div class="hero__content" id="hero-content">
+        <p class="eyebrow">Developer · Builder · Manager</p>
+        <h1 class="display hero__title"><span>Attainable homes,</span> <span>built end to end.</span></h1>
+        <p class="hero__lede">We find the land, fund it, build it and run it ourselves, so working families get quality homes at rents they can reach. Nine states, from the Southeast to the Mountain West.</p>
+        <div class="btns">
+          <a class="btn btn--gold" href="https://hillpointe.com/communities">Browse Portfolio</a>
+          <a class="btn btn--light" href="https://hillpointe.com/approach">Our Approach</a>
+        </div>
+      </div>
+
+      <!-- start here: three index tabs, revealed once the video fills the screen -->
+      <div class="hero__foot rt" id="hero-foot">
+        <nav class="rt1" aria-label="Start here">
+          <a class="rt1__i" href="https://hillpointe.com/communities"><span class="rt1__n">01</span><span class="rt1__b"><span class="rt1__t">Find a home</span><span class="rt1__d">Pointe Grand communities, now leasing in Florida, Georgia and South Carolina.</span></span><span class="rt1__a" aria-hidden="true">→</span></a>
+          <a class="rt1__i" href="https://hillpointe.com/sell-land"><span class="rt1__n">02</span><span class="rt1__b"><span class="rt1__t">Sell us land</span><span class="rt1__d">We are acquiring sites from the Southeast to the Mountain West. Tell us about yours.</span></span><span class="rt1__a" aria-hidden="true">→</span></a>
+          <a class="rt1__i" href="https://app.junipersquare.com/i/hillpointe" target="_blank" rel="noopener"><span class="rt1__n">03</span><span class="rt1__b"><span class="rt1__t">Invest with us</span><span class="rt1__d">Partner with the No. 5 multifamily developer in America, or log in to the investor portal.</span></span><span class="rt1__a" aria-hidden="true">→</span></a>
+        </nav>
+      </div>
+
+      <button class="vctl" type="button" id="vctl" aria-label="Pause video"><i aria-hidden="true"></i><span>Pause</span></button>
+    </div>
+  </section>
+
+  <!-- 1) WHO WE ARE: the mission, said once and plainly -->
+  <section class="intro light" id="about">
+    <!-- centred statement and link (option 1 from intro.html) -->
+    <div class="wrap intro__head">
+      <p class="eyebrow rv">Who we are</p>
+      <p class="statement intro__statement">One team owns every step, from the first acre to the last lease. That is how working families get homes that are built well and priced within reach.</p>
+      <a class="link rv" href="https://hillpointe.com/about">About Hillpointe</a>
+    </div>
+    <!-- the original three photos -->
+    <div class="wrap intro__grid">
+      <figure class="frame intro__img-a shape">
+        <img src="media/c/brick-city.jpg" alt="Pointe Grand Brick City at sunset" width="1200" height="800" loading="lazy">
+      </figure>
+      <figure class="intro__img-b">
+        <div class="frame shape"><img src="media/c/deland.jpg" alt="Resort-style pool at Pointe Grand DeLand" width="1200" height="800" loading="lazy"></div>
+        <figcaption class="cap rv">Pointe Grand DeLand · DeLand, FL · 204 homes</figcaption>
+      </figure>
+      <p class="cap intro__cap-a rv">Pointe Grand Brick City · Ocala, FL · 312 homes</p>
+    </div>
+    <!-- full-width landscape: edge to edge across the screen -->
+    <figure class="intro__wide">
+      <div class="frame"><img src="media/c/oakleaf.jpg" alt="Aerial view of Pointe Grand at Oakleaf among the pines" width="1200" height="800" loading="lazy"></div>
+      <figcaption class="cap wrap rv">Pointe Grand at Oakleaf · Middleburg, FL · 216 homes</figcaption>
+    </figure>
+    <!-- the lifecycle paragraph, centred under the landscape -->
+    <div class="wrap intro__after">
+      <p class="rv">Hillpointe was built to own the whole multifamily lifecycle: site selection, entitlements, capital, construction, materials and property management. With no hand-offs between companies, quality stays consistent, timelines stay tight and costs stay controlled.</p>
+    </div>
+  </section>
+
+  <!-- 2) NUMBERS: the NMHC ranking leads, the stair cards prove it -->
+  <section class="nums dark" id="numbers">
+    <div class="wrap">
+      <div class="nums__head">
+        <div class="nums__copy">
+          <p class="eyebrow rv">By the numbers</p>
+          <h2 class="h2 display">The No. 5 developer in America</h2>
+          <p class="nums__sub rv">Ranked No. 5 developer and No. 7 builder in the 2026 NMHC 50, with 5,466 homes started in 2025.</p>
+        </div>
+        <!-- the NMHC award, in hillpointe.com's own gold frame, set in our type -->
+        <figure class="award" id="award" aria-label="5th largest multifamily developer, NMHC 50, 2026">
+          <div class="award__in" aria-hidden="true">
+            <p class="award__big">5th Largest</p>
+            <p class="award__small">Multifamily<br>Developer</p>
+            <img class="award__logo" src="media/nmhc-logo.svg" alt="" width="300" height="104">
+            <p class="award__year">NMHC 50 · 2026</p>
+          </div>
+        </figure>
+      </div>
+      <div class="stairs" id="stairs">
+        <div class="stair stair--1" style="--k:0"><span class="stair__bar"></span><div class="stair__top"><p class="stair__num">14,300+</p></div><p class="stair__label">Units under management</p></div>
+        <div class="stair stair--2" style="--k:1"><span class="stair__bar"></span><div class="stair__top"><p class="stair__num">15,600+</p></div><p class="stair__label">Units in the pipeline</p></div>
+        <div class="stair stair--3" style="--k:2"><span class="stair__bar"></span><div class="stair__top"><p class="stair__num">9,000+</p></div><p class="stair__label">Units under construction</p></div>
+        <div class="stair stair--4" style="--k:3"><span class="stair__bar"></span><div class="stair__top"><p class="stair__num">$1.7B</p></div><p class="stair__label">Equity under management</p></div>
+      </div>
+      <ul class="nums__foot rv">
+        <li><b>700+</b> employees</li>
+        <li><b>9</b> states</li>
+        <li>Headquartered in Winter Park, Florida</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3) WHERE WE BUILD: a tile map replaces the state carousel -->
+  <section class="map light" id="portfolio">
+    <div class="wrap">
+      <div class="map__head">
+        <div>
+          <p class="eyebrow rv">Where we build</p>
+          <h2 class="h2 display">Nine states, one playbook</h2>
+        </div>
+        <div class="map__intro rv">
+          <p>Leasing in Florida, Georgia and South Carolina. Building in Arizona, Colorado, Kentucky, North Carolina and Tennessee. And newly into Nevada.</p>
+          <ul class="legend" aria-label="Map key">
+            <li><i class="k k--live"></i>Now leasing</li>
+            <li><i class="k k--build"></i>Under construction</li>
+            <li><i class="k k--new"></i>First site acquired</li>
+          </ul>
+          <a class="link map__all" href="https://hillpointe.com/communities">Browse all communities</a>
+        </div>
+      </div>
+      <div class="map__body">
+        <div class="tiles rv" id="tiles" role="group" aria-label="States where Hillpointe builds"></div>
+        <article class="state" id="state" aria-live="polite"></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4) APPROACH: five stages, one team; pinned and stepped by scroll -->
+  <section class="flow dark" id="approach">
+    <div class="flow__stage">
+      <div class="wrap flow__grid">
+        <div class="flow__copy">
+          <p class="eyebrow">Our approach · Vertically integrated</p>
+          <h2 class="h2 display flow__h">One team, no hand-offs</h2>
+          <div class="flow__count" aria-hidden="true"><span class="flow__digit" id="flow-digit"><span>01</span><span>02</span><span>03</span><span>04</span><span>05</span></span><span class="flow__of">/ 05</span></div>
+          <div class="flow__texts" id="flow-texts">
+            <div class="flow__t is-on"><h3>Capital markets</h3><p>We structure the capital and secure the financing that takes each community from plan to groundbreaking.</p></div>
+            <div class="flow__t"><h3>Development</h3><p>We find and underwrite sites, carry them through entitlements and design, and control the foundation before a dollar is deployed.</p></div>
+            <div class="flow__t"><h3>Materials sourcing</h3><p>We buy materials directly, which shortens timelines, controls costs and takes supply-chain risk off the table.</p></div>
+            <div class="flow__t"><h3>Construction</h3><p>Our in-house team builds every community on time and on budget, without relying on outside contractors.</p></div>
+            <div class="flow__t"><h3>Asset &amp; property management</h3><p>Proponents, our management company, runs every community so residents get exceptional service from day one.</p></div>
+          </div>
+          <a class="link link--light" href="https://hillpointe.com/approach">Discover our process</a>
+        </div>
+        <div class="flow__imgs" id="flow-imgs">
+          <img class="is-on" src="media/office.jpg" alt="Hillpointe headquarters in Winter Park" width="1200" height="800" loading="lazy">
+          <img src="media/news/foothills-groundbreaking.jpg" alt="Groundbreaking at Pointe Grand Foothills at Maryville" width="1920" height="1280" loading="lazy">
+          <img src="media/c/byron.jpg" alt="Building exterior at Pointe Grand Byron" width="1200" height="800" loading="lazy">
+          <img src="media/news/reno-cape-at-southport.jpg" alt="Hillpointe construction team on site" width="1920" height="1280" loading="lazy">
+          <img src="media/c/spartanburg.jpg" alt="Fire pit lounge at Pointe Grand Spartanburg" width="1200" height="800" loading="lazy">
+        </div>
+      </div>
+      <ol class="rail wrap" id="rail">
+        <li><span class="rail__bar"><i></i></span><span class="rail__l">Capital</span></li>
+        <li><span class="rail__bar"><i></i></span><span class="rail__l">Development</span></li>
+        <li><span class="rail__bar"><i></i></span><span class="rail__l">Materials</span></li>
+        <li><span class="rail__bar"><i></i></span><span class="rail__l">Construction</span></li>
+        <li><span class="rail__bar"><i></i></span><span class="rail__l">Management</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 5) NEWS: three dated cards replace the ticker -->
+  <section class="news light" id="news">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow rv">Latest news</p>
+          <h2 class="h2 display">From the field</h2>
+        </div>
+        <a class="link rv" href="https://hillpointe.com/news">All news</a>
+      </div>
+      <div class="cards">
+        <a class="card" href="https://hillpointe.com/news/foothills-at-maryville-groundbreaking" style="--d:0s">
+          <div class="card__img shape"><img src="media/news/foothills-groundbreaking.jpg" alt="" width="1920" height="1280" loading="lazy"></div>
+          <p class="card__meta rv"><span>Company news</span><time datetime="2026-10-27">Oct 27, 2026</time></p>
+          <h3 class="card__t rv">Breaking ground on 300 homes in Maryville, Tennessee</h3>
+        </a>
+        <a class="card" href="https://hillpointe.com/news/reno-cape-at-southport" style="--d:.08s">
+          <div class="card__img shape"><img src="media/news/reno-cape-at-southport.jpg" alt="" width="1920" height="1280" loading="lazy"></div>
+          <p class="card__meta rv"><span>Company news</span><time datetime="2026-10-21">Oct 21, 2026</time></p>
+          <h3 class="card__t rv">Into Nevada with Pointe Grand Cape at Southport</h3>
+        </a>
+        <a class="card" href="https://hillpointe.com/news/nmhc-50-2026" style="--d:.16s">
+          <div class="card__img shape"><img src="media/news/nmhc-50-2026-spring-hill.jpg" alt="" width="1920" height="1280" loading="lazy"></div>
+          <p class="card__meta rv"><span>Recognition</span><time datetime="2026-10-21">Oct 21, 2026</time></p>
+          <h3 class="card__t rv">No. 5 developer and No. 7 builder in the 2026 NMHC 50</h3>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6) LEADERSHIP: the founders, grey at rest, colour on hover (or when centred on touch) -->
+  <section class="lead light light--alt" id="team">
+    <div class="wrap lead__grid">
+      <div class="lead__copy">
+        <p class="eyebrow rv">Leadership</p>
+        <h2 class="h2 display">Decades of combined development expertise</h2>
+        <p class="rv">Our founders bring experience across institutional capital, large-scale construction and multifamily operations, and lead a team of more than 700.</p>
+        <a class="link rv" href="https://hillpointe.com/team">Meet the team</a>
+      </div>
+      <ul class="people">
+        <li class="person rv" style="--d:0s">
+          <div class="person__img"><img src="media/team/kelly.jpg" alt="Kelly Mahoney" width="1382" height="1384" loading="lazy"></div>
+          <h3 class="person__n">Kelly Mahoney</h3>
+          <p class="person__r">Co-founder &amp; Managing Partner</p>
+          <p class="person__b">Leads development and construction. Has led over $3 billion in residential assets, about 15,000 units.</p>
+        </li>
+        <li class="person rv" style="--d:.1s">
+          <div class="person__img"><img src="media/team/steven.jpg" alt="Steven Campisi" width="1600" height="1600" loading="lazy"></div>
+          <h3 class="person__n">Steven Campisi, CFA</h3>
+          <p class="person__r">Co-founder &amp; Managing Partner</p>
+          <p class="person__b">Leads capital markets and investor relations, with about $3 billion in institutional real estate experience.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 7) CLOSE: careers (original) and land sellers (from the critique) -->
+  <section class="close dark" id="careers">
+    <div class="wrap close__grid">
+      <a class="tile shape" href="https://hillpointe.com/careers">
+        <video class="tile__vid" muted loop playsinline preload="none" aria-hidden="true"><source src="media/hero.mp4" type="video/mp4"></video>
+        <div class="tile__body">
+          <p class="eyebrow">Careers</p>
+          <h2 class="tile__t display">Build the future with us</h2>
+          <p>Roles across development, construction, operations and property management.</p>
+          <span class="btn btn--gold">View open positions</span>
+        </div>
+      </a>
+      <a class="tile shape" href="https://hillpointe.com/sell-land" style="--d:.1s">
+        <img src="media/c/daytona.jpg" alt="" width="1200" height="800" loading="lazy">
+        <div class="tile__body">
+          <p class="eyebrow">Sell land</p>
+          <h2 class="tile__t display">Have land? Let's talk</h2>
+          <p>We are acquiring sites from the Southeast to the Mountain West. Tell us about yours.</p>
+          <span class="btn btn--light">Sell us land</span>
+        </div>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer class="ftr">
+  <!-- the plan behind every home: faint at rest, lit around the cursor (or finger) -->
+  <div class="bp bp--ftr" aria-hidden="true"><i class="bp__base"></i><i class="bp__lit"></i></div>
+  <div class="wrap">
+    <div class="ftr__cols">
+      <div>
+        <img class="ftr__logo" src="media/logo.png" alt="Hillpointe" width="600" height="68" loading="lazy">
+        <p class="ftr__about">A vertically integrated developer, builder and manager of attainable multifamily housing.</p>
+      </div>
+      <nav aria-label="Company">
+        <h3>Company</h3>
+        <a href="https://hillpointe.com/about">About</a><a href="https://hillpointe.com/team">Team</a><a href="https://hillpointe.com/approach">Our Approach</a><a href="https://hillpointe.com/affiliates">Affiliates</a><a href="https://hillpointe.com/recognition">Recognition</a><a href="https://hillpointe.com/hillpointe-helps">Hillpointe Helps</a>
+      </nav>
+      <nav aria-label="Explore">
+        <h3>Explore</h3>
+        <a href="https://hillpointe.com/communities">Portfolio</a><a href="https://hillpointe.com/news">News</a><a href="https://hillpointe.com/careers">Careers</a><a href="https://hillpointe.com/sell-land">Sell Land</a><a href="https://hillpointe.com/faq">FAQ</a><a href="https://app.junipersquare.com/i/hillpointe" target="_blank" rel="noopener">Investor Login</a>
+      </nav>
+      <div>
+        <h3>Contact</h3>
+        <address>631 W Morse Blvd., Suite 200<br>Winter Park, FL 32789</address>
+        <a href="mailto:info@hillpointe.com">info@hillpointe.com</a><a href="tel:+13525040422">(352) 504-0422</a>
+        <div class="ftr__social"><a href="https://www.linkedin.com/company/hillpointe">LinkedIn</a><a href="https://www.facebook.com/hillpointe">Facebook</a><a href="https://www.instagram.com/hillpointe">Instagram</a></div>
+      </div>
+    </div>
+    <div class="ftr__base">
+      <p>© 2026 Hillpointe</p>
+      <nav aria-label="Legal"><a href="https://hillpointe.com/privacy-policy">Privacy Policy</a><a href="https://hillpointe.com/trust-center">Trust Center</a><a href="https://hillpointe.com/terms-of-use">Terms of Use</a><a href="https://hillpointe.com/sms-terms">SMS Terms</a></nav>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

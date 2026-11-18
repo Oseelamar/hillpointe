@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Who we are · 6 options | Hillpointe</title>
+<meta name="robots" content="noindex">
+<script>
+/* Runs before paint. Review switches: ?p=0..1 freezes the hero zoom; ?flat turns motion off. */
+(function () {
+  var d = document.documentElement;
+  d.classList.add('js');
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || /[?&]flat/.test(location.search)) d.classList.add('calm');
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="intro.css">
+</head>
+<body id="top">
+
+<!-- HEADER (Castle pattern: utility strip + ruled bar, solid once scrolled) -->
+<header class="hdr" id="hdr">
+  <nav class="util" aria-label="Utility">
+    <a href="https://hillpointe.com/communities">Find a Home</a>
+    <a href="https://hillpointe.com/sell-land">Sell Land</a>
+    <a href="https://hillpointe.com/hillpointe-helps">Hillpointe Helps</a>
+    <a href="https://hillpointe.com/faq">FAQ</a>
+  </nav>
+  <div class="bar">
+    <a class="bar__logo" href="#top" aria-label="Hillpointe home">
+      <img src="media/logo.png" alt="Hillpointe" width="600" height="68">
+    </a>
+    <nav class="nav" aria-label="Main">
+      <ul class="nav__list">
+        <li class="has-sub">
+          <a href="https://hillpointe.com/about">About</a>
+          <button class="nav__tog" type="button" aria-expanded="false" aria-label="About menu"></button>
+          <ul class="sub">
+            <li><a href="https://hillpointe.com/about">About Us</a></li>
+            <li><a href="https://hillpointe.com/team">Team</a></li>
+            <li><a href="https://hillpointe.com/approach">Our Approach</a></li>
+            <li><a href="https://hillpointe.com/hillpointe-helps">Hillpointe Helps</a></li>
+            <li><a href="https://hillpointe.com/affiliates">Affiliates</a></li>
+          </ul>
+        </li>
+        <li class="has-sub">
+          <a href="https://hillpointe.com/communities">Portfolio</a>
+          <button class="nav__tog" type="button" aria-expanded="false" aria-label="Portfolio menu"></button>
+          <ul class="sub">
+            <li><a href="https://hillpointe.com/communities">All Communities</a></li>
+            <li><a href="https://hillpointe.com/communities?state=Florida">Florida</a></li>
+            <li><a href="https://hillpointe.com/communities?state=Georgia">Georgia</a></li>
+            <li><a href="https://hillpointe.com/communities?state=South%20Carolina">South Carolina</a></li>
+            <li><a href="https://hillpointe.com/communities?state=North%20Carolina">North Carolina</a></li>
+            <li><a href="https://hillpointe.com/communities?state=Tennessee">Tennessee</a></li>
+            <li><a href="https://hillpointe.com/communities?state=Colorado">Colorado</a></li>
+            <li><a href="https://hillpointe.com/communities?state=Arizona">Arizona</a></li>
+            <li><a href="https://hillpointe.com/communities?state=Kentucky">Kentucky</a></li>
+            <li><a href="https://hillpointe.com/communities?state=Nevada">Nevada</a></li>
+          </ul>
+        </li>
+        <li><a href="https://hillpointe.com/news">News</a></li>
+        <li><a href="https://hillpointe.com/careers">Careers</a></li>
+        <li><a href="https://hillpointe.com/contact">Contact Us</a></li>
+      </ul>
+    </nav>
+    <a class="bar__cta" href="https://app.junipersquare.com/i/hillpointe" target="_blank" rel="noopener">Investor Login <span aria-hidden="true">↗</span></a>
+    <button class="burger" type="button" aria-label="Menu" aria-haspopup="dialog" id="burger"><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<dialog class="mm" id="mm" aria-label="Menu">
+  <div class="mm__top">
+    <a class="bar__logo" href="#top"><img src="media/logo.png" alt="Hillpointe" width="600" height="68"></a>
+    <button class="mm__close" type="button" aria-label="Close menu" id="mm-close"><span></span><span></span></button>
+  </div>
+  <div class="mm__body" id="mm-body"></div>
+  <a class="bar__cta mm__cta" href="https://app.junipersquare.com/i/hillpointe" target="_blank" rel="noopener">Investor Login <span aria-hidden="true">↗</span></a>
+</dialog>
+
+<main class="iv-main">
+
+  <!-- 1 · QUIET STATEMENT (Diamond Rose, Huts): centred statement, then the aerial with two postcards resting on its edge -->
+  <section class="iv iv1 light" data-n="1">
+    <div class="wrap iv1__head">
+      <p class="eyebrow rv">Who we are</p>
+      <p class="iv1__st rv">One team owns every step, from the first acre to the last lease. That is how working families get homes that are built well and priced within reach.</p>
+      <a class="link rv" href="https://hillpointe.com/about">About Hillpointe</a>
+    </div>
+    <div class="iv1__band">
+      <figure class="iv1__wide shape"><img src="media/c/oakleaf.jpg" alt="Aerial view of Pointe Grand at Oakleaf among the pines" loading="lazy"></figure>
+      <figure class="iv1__card iv1__card--a rv"><span class="iv1__ph"><img src="media/c/brick-city.jpg" alt="Pointe Grand Brick City at sunset" loading="lazy"></span><figcaption class="cap">Brick City · Ocala, FL</figcaption></figure>
+      <figure class="iv1__card iv1__card--b rv" style="--d:.12s"><span class="iv1__ph"><img src="media/c/deland.jpg" alt="Resort-style pool at Pointe Grand DeLand" loading="lazy"></span><figcaption class="cap">DeLand, FL</figcaption></figure>
+      <p class="cap iv1__wcap">Pointe Grand at Oakleaf · Middleburg, FL · 216 homes</p>
+    </div>
+  </section>
+
+  <!-- 2 · MONUMENT (NGLM): one large line in capitals, a short centred paragraph, then one photo carrying a word -->
+  <section class="iv iv2 light" data-n="2">
+    <div class="wrap iv2__head">
+      <p class="eyebrow rv">Who we are</p>
+      <h2 class="iv2__h display">One team<br>owns every step</h2>
+      <div class="iv2__row rv">
+        <p class="cap">From the first acre<br>to the last lease</p>
+        <p class="iv2__p">Site selection, entitlements, capital, construction, materials and property management all stay in-house. That is how working families get homes that are built well and priced within reach.</p>
+        <a class="link" href="https://hillpointe.com/about">About Hillpointe</a>
+      </div>
+    </div>
+    <figure class="iv2__photo shape">
+      <img src="media/c/brick-city.jpg" alt="Pointe Grand Brick City at sunset" loading="lazy">
+      <span class="iv2__word" aria-hidden="true">Pointe·Grand</span>
+      <figcaption class="iv2__cap"><span>Brick City</span><span>Ocala, Florida</span><span>312 homes</span></figcaption>
+    </figure>
+    <div class="wrap iv2__pair">
+      <figure class="shape"><img src="media/c/deland.jpg" alt="Resort-style pool at Pointe Grand DeLand" loading="lazy"><figcaption class="cap">Pointe Grand DeLand · DeLand, FL</figcaption></figure>
+      <figure class="shape" style="--d:.12s"><img src="media/c/oakleaf.jpg" alt="Aerial view of Pointe Grand at Oakleaf" loading="lazy"><figcaption class="cap">Pointe Grand at Oakleaf · Middleburg, FL</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- 3 · CARD ON THE LAND (Quinn): the aerial fills the frame, a paper card carries the story and two communities -->
+  <section class="iv iv3" data-n="3">
+    <figure class="iv3__bg"><img src="media/c/oakleaf.jpg" alt="Aerial view of Pointe Grand at Oakleaf among the pines" loading="lazy"></figure>
+    <div class="wrap iv3__wrap">
+      <article class="iv3__card rv">
+        <p class="eyebrow">Who we are</p>
+        <p class="iv3__st">One team owns every step, from the first acre to the last lease.</p>
+        <p class="iv3__p">Site selection, entitlements, capital, construction, materials and property management all stay in-house, so working families get homes that are built well and priced within reach.</p>
+        <div class="iv3__thumbs">
+          <figure><img src="media/c/brick-city.jpg" alt="Pointe Grand Brick City" loading="lazy"><figcaption>Ocala, FL</figcaption></figure>
+          <figure><img src="media/c/deland.jpg" alt="Pointe Grand DeLand" loading="lazy"><figcaption>DeLand, FL</figcaption></figure>
+        </div>
+        <a class="btn btn--gold" href="https://hillpointe.com/about">About Hillpointe</a>
+      </article>
+    </div>
+    <p class="cap iv3__cap">Pointe Grand at Oakleaf · Middleburg, FL</p>
+  </section>
+
+  <!-- 4 · THREE MOVES (Quinn list): land, build, manage; the photo follows the row you are on -->
+  <section class="iv iv4 light" data-n="4">
+    <div class="wrap">
+      <p class="eyebrow rv">Who we are</p>
+      <p class="iv4__st rv">One team owns every step, from the first acre to the last lease. That is how working families get homes that are built well and priced within reach.</p>
+      <div class="iv4__body">
+        <div class="iv4__ph shape" aria-hidden="true">
+          <img class="is-on" src="media/c/oakleaf.jpg" alt="" loading="lazy">
+          <img src="media/c/brick-city.jpg" alt="" loading="lazy">
+          <img src="media/c/deland.jpg" alt="" loading="lazy">
+        </div>
+        <ol class="iv4__list">
+          <li class="iv4__i is-on rv"><span class="iv4__n">01</span><div><h3>Find the land</h3><p>Site selection and entitlements, handled by our own team.</p><img class="iv4__m" src="media/c/oakleaf.jpg" alt="Aerial view of Pointe Grand at Oakleaf" loading="lazy"></div></li>
+          <li class="iv4__i rv" style="--d:.08s"><span class="iv4__n">02</span><div><h3>Build it ourselves</h3><p>Capital, materials sourcing and construction, all under one roof.</p><img class="iv4__m" src="media/c/brick-city.jpg" alt="Pointe Grand Brick City" loading="lazy"></div></li>
+          <li class="iv4__i rv" style="--d:.16s"><span class="iv4__n">03</span><div><h3>Run it for the long term</h3><p>Proponents, our management company, keeps every community at the standard it opened with.</p><img class="iv4__m" src="media/c/deland.jpg" alt="Pointe Grand DeLand pool" loading="lazy"></div></li>
+        </ol>
+      </div>
+      <a class="link rv" href="https://hillpointe.com/about">About Hillpointe</a>
+    </div>
+  </section>
+
+  <!-- 5 · EDITORIAL SPLIT (Prestigious): the photo holds still while three short passages pass beside it -->
+  <section class="iv iv5 light" data-n="5">
+    <div class="wrap iv5__grid">
+      <div class="iv5__stick">
+        <div class="iv5__ph">
+          <img class="is-on" src="media/c/brick-city.jpg" alt="Pointe Grand Brick City at sunset" loading="lazy">
+          <img src="media/c/oakleaf.jpg" alt="Aerial view of Pointe Grand at Oakleaf" loading="lazy">
+          <img src="media/c/deland.jpg" alt="Resort-style pool at Pointe Grand DeLand" loading="lazy">
+          <p class="iv5__cap"><span class="is-on">Brick City · Ocala, FL</span><span>Oakleaf · Middleburg, FL</span><span>DeLand, FL</span></p>
+        </div>
+      </div>
+      <div class="iv5__text">
+        <div class="iv5__b" data-i="0">
+          <p class="eyebrow">Who we are</p>
+          <p class="iv5__st">One team owns every step, from the first acre to the last lease.</p>
+          <img class="iv5__m" src="media/c/brick-city.jpg" alt="" loading="lazy">
+        </div>
+        <div class="iv5__b" data-i="1">
+          <p class="cap">No hand-offs</p>
+          <p class="iv5__p">Site selection, entitlements, capital, construction, materials and property management all stay in-house. Quality stays consistent, timelines stay tight and costs stay controlled.</p>
+          <img class="iv5__m" src="media/c/oakleaf.jpg" alt="" loading="lazy">
+        </div>
+        <div class="iv5__b" data-i="2">
+          <p class="cap">Built for working families</p>
+          <p class="iv5__p">Homes that are built well and priced within reach, in nine states from the Southeast to the Mountain West.</p>
+          <a class="link" href="https://hillpointe.com/about">About Hillpointe</a>
+          <img class="iv5__m" src="media/c/deland.jpg" alt="" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 · THE GRID (Varsity): a closed hairline grid, labels in the cell corners -->
+  <section class="iv iv6 light" data-n="6">
+    <div class="wrap">
+      <div class="iv6__grid rv">
+        <div class="iv6__c iv6__st"><span class="iv6__l">Who we are <i>↘</i></span><p>One team owns every step, from the first acre to the last lease.</p></div>
+        <figure class="iv6__c iv6__ph"><img src="media/c/brick-city.jpg" alt="Pointe Grand Brick City at sunset" loading="lazy"><span class="iv6__l iv6__l--w">Ocala, FL</span></figure>
+        <figure class="iv6__c iv6__ph"><img src="media/c/deland.jpg" alt="Resort-style pool at Pointe Grand DeLand" loading="lazy"><span class="iv6__l iv6__l--w">DeLand, FL</span></figure>
+        <figure class="iv6__c iv6__ph iv6__wide"><img src="media/c/oakleaf.jpg" alt="Aerial view of Pointe Grand at Oakleaf" loading="lazy"><span class="iv6__l iv6__l--w">Middleburg, FL · 216 homes</span></figure>
+        <div class="iv6__c iv6__tx"><span class="iv6__l">No hand-offs <i>↘</i></span><p>Site selection, entitlements, capital, construction, materials and property management all stay in-house, so working families get homes that are built well and priced within reach.</p><a class="link" href="https://hillpointe.com/about">About Hillpointe</a></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<div class="iv-next" aria-hidden="true"></div>
+
+<nav class="picker" aria-label="Choose an option">
+  <span class="picker__l">Who we are</span>
+  <a href="?v=1" data-v="1">1</a><a href="?v=2" data-v="2">2</a><a href="?v=3" data-v="3">3</a><a href="?v=4" data-v="4">4</a><a href="?v=5" data-v="5">5</a><a href="?v=6" data-v="6">6</a>
+</nav>
+
+<script src="intro.js"></script>
+</body>
+</html>
